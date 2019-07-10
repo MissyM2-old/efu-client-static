@@ -1,10 +1,12 @@
 import React from 'react';
 
+import {connect} from 'react-redux';
+
 import './css/deliverable-profile.css';
 
-export default function DeliverableProfile(props) {
+export function DeliverableProfile(props) {
   
-       const prephrsoptions = this.props.allprephrs.map((option, index) => {
+       const prephrsoptions = props.allprephrs.map((option, index) => {
                 return (
                     <option 
                             key = {index}
@@ -25,15 +27,15 @@ export default function DeliverableProfile(props) {
                                                     <div className="deliverable-sub-section three-items-top">
                                                             <div className="column">
                                                                 <label className="small-titles light-label"> Course Name</label>
-                                                                <div className="del-read-only">{this.props.courseName}</div>
+                                                                <div className="del-read-only">{props.courseName}</div>
                                                             </div>
                                                             <div className="column">
                                                                     <label className="small-titles light-label">Due Date</label>
-                                                                    <div className="del-read-only">{this.props.dueDateFormatted}</div>
+                                                                    <div className="del-read-only">{props.dueDateFormatted}</div>
                                                             </div>
                                                             <div className="column">
                                                                     <label className="small-titles light-label"> Deliverable Name</label>
-                                                                    <div className="del-read-only">{this.props.deliverableName}</div>
+                                                                    <div className="del-read-only">{props.deliverableName}</div>
                                                                 </div> 
                                                     </div>
                                                     <div className="deliverable-sub-section three-items-bottom">
@@ -41,16 +43,15 @@ export default function DeliverableProfile(props) {
                                                                                 <label className="small-titles light-label">Prep Hours</label>
                                                                                 <select
                                                                                     className="center"
-                                                                                    ref={element => this.prephrs = element}
                                                                                     type="number"
                                                                                     defaultValue="6"
                                                                                     aria-label="prephrs"
                                                                                 >
                                                                                 <option
                                                                                     key="1"
-                                                                                    value={this.props.prephrs}
+                                                                                    value={props.prephrs}
                                                                                 >
-                                                                                    {this.props.prephrs}
+                                                                                    {props.prephrs}
                                                                                 </option>
                                                                                 {prephrsoptions}
                                                                                 </select>
@@ -64,9 +65,9 @@ export default function DeliverableProfile(props) {
                                                                         >
                                                                             <option
                                                                                 key="1"
-                                                                                value={this.props.impact}
+                                                                                value={props.impact}
                                                                             >
-                                                                                {this.props.impact}
+                                                                                {props.impact}
                                                                             </option>
                                                                             <option 
                                                                                 key = "2"
@@ -98,7 +99,7 @@ export default function DeliverableProfile(props) {
                                                                     <label className="small-titles light-label"> Description</label>
                                                                     <input
                                                                             type="text"
-                                                                            defaultValue={this.props.desc}
+                                                                            defaultValue={props.desc}
                                                                             aria-label="Desc"
                                                                         />
                                                                 
@@ -130,3 +131,10 @@ export default function DeliverableProfile(props) {
                 </div> 
             );
         } 
+
+        const mapStateToProps = (state) => ({
+            todaydeliverables: state.todaydeliverables,
+            thisweekdeliverables: state.thisweekdeliverables
+        });
+        
+        export default connect(mapStateToProps)(DeliverableProfile);

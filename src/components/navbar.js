@@ -1,4 +1,5 @@
 import React from 'react';
+import {connect} from 'react-redux';
 
 import DrawerToggleButton from './drawer-toggle-button';
 import Suggestion from './suggestion';
@@ -6,7 +7,7 @@ import Suggestion from './suggestion';
 import './css/navbar.css';
 import { Link } from 'react-router-dom';
 
-export default function NavBar(props) {
+export function NavBar(props) {
         return (
             <header className="navbar">
             <nav className="navbar_navigation" role="navigation" aria-label="navbar_navigation">
@@ -72,6 +73,13 @@ export default function NavBar(props) {
              </header>
         );
     }
+
+    const mapStateToProps = (state) => ({
+        todaydeliverables: state.todaydeliverables,
+        thisweekdeliverables: state.thisweekdeliverables
+    });
+    
+    export default connect(mapStateToProps)(NavBar);
 
 
 

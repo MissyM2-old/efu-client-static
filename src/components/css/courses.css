@@ -83,26 +83,7 @@
             width: 85%;
         }
 
-        .add-course-form {
-            width: 75%;
-            margin:15px auto;
-
-        }
-
-        .add-course-form form {
-            text-align:left;
-            width: 100%;
-            margin:0 auto;
-            padding: 8px;
-            background-color: var(--off-white-color);
-            -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.1);
-            -moz-box-shadow: 0 0 4px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.1);
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.1);
-        }
-
-        .add-course-form h3 {
-            text-align:center;
-        }
+       
 
         .courseName-unit input,
         .courseDesc-unit textarea {
@@ -120,9 +101,7 @@
 
 
     @media only screen and (min-width : 480px) {
-        .add-course-form form {
-            width: 80%;
-        }
+        
 
     
     }
@@ -164,9 +143,7 @@
             background-color:var(--med-gray);
          }
 
-          .add-course-form form {
-            width: 50%;
-        }
+        
 
     }
 

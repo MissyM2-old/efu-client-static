@@ -2,7 +2,6 @@ import React from 'react';
 
 import NavBar from "./navbar";
 import RightSideDrawer from './right-side-drawer';
-import Backdrop from './backdrop';
 
 import './css/weeks.css';
 
@@ -10,7 +9,7 @@ import './css/weeks.css';
 export default function Weeks(props) {
                
         /*       
-                const weeks = this.props.thistermweeks.map((week, index) => {
+                const weeks = props.thistermweeks.map((week, index) => {
                         return (
                                 <div className="unit-container-blue hundredpercent-width tenpx-bottom-margin" key={index + 100}>
                                         <h3>Week Number {week.weekNum}</h3>
@@ -41,7 +40,7 @@ export default function Weeks(props) {
                                         <h4>Courses and Grades</h4>
                                         <div className="weeks-row">
 
-                                                {this.props.thistermgrades.filter(grade => grade.week === week.weekNum )
+                                                {props.thistermgrades.filter(grade => grade.week === week.weekNum )
                                                 .map((grade, index) => {
                                                                 return (
                                                                         <div key={index + 1} className="grade-container-green fivepx-margin">

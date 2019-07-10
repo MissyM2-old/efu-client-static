@@ -1,6 +1,6 @@
 constructor(props) {
     super(props);
-    this.state={
+    state={
         
         currentsuggestion:{
             category: "Study Skills",

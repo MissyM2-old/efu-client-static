@@ -3,34 +3,26 @@ import './css/modal.css';
 
 export default class Modal extends React.Component {
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            termSelected: props.currentterm
-        }
-       this.setSelectedTerm = this.setSelectedTerm.bind(this);
-    }
-
     setSelectedTerm(e) {
         e.preventDefault();
-        this.setState({
+        setState({
             termSelected: e.target.value
         }, () => {
-            this.props.setcurrentterm(this.state.termSelected);
-            this.props.getcurrentweekdetails();
-            this.props.setPageFlags("Dashboard");
+            props.setcurrentterm(state.termSelected);
+            props.getcurrentweekdetails();
+            props.setPageFlags("Dashboard");
         });
     }
 
     render() {
 
-        const allterms = this.props.terms.map((term, index) => {
+        const allterms = props.terms.map((term, index) => {
             return (
                 <option 
                     key={index}
                     value={term.termDesc}
                     data-identifier={term.termDesc}
-                    onChange={this.setSelectedTerm}
+                    onChange={setSelectedTerm}
                 >
                     {term.termDesc}
                 </option>
@@ -44,7 +36,7 @@ export default class Modal extends React.Component {
                             <select
                                 className="hundredpercent-width"
                                 defaultValue={'DEFAULT'}
-                                onChange={this.setSelectedTerm}
+                                onChange={setSelectedTerm}
                                 >
                                     <option value="DEFAULT" disabled>Select an Academic Term...</option> 
                                     {allterms}

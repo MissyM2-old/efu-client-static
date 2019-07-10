@@ -7,9 +7,8 @@ import './css/dashboard.css';
 import NavBar from "./navbar";
 import Deliverable from './deliverable';
 
-export class Dashboard extends React.Component {
-render() {
-    const todaydeliverables = todaydeliverables.map((deliverable, index) => {
+export function Dashboard(props) {
+    const todaydeliverables = props.todaydeliverables.map((deliverable, index) => {
         return (
             <ul key={index} className="deliverable-container-green fivepx-margin">
                 <Deliverable
@@ -19,7 +18,7 @@ render() {
             
         );
     });
-
+/*
     const thisweekdeliverables = thisweekdeliverables.map((deliverable, index) => {
         return (
             <ul key={index} className="deliverable-container-green fivepx-margin">
@@ -29,6 +28,7 @@ render() {
             </ul>
         );
     })
+    */
 
             return (
                 <div className="content-container">
@@ -39,7 +39,7 @@ render() {
                                         <h3>Term:  Summer (4 weeks)</h3>
                                         <div></div>
                                         <div className="whats-due">What is Due?</div>
-                                    </header>
+                        </header>
                         <div className="section-container">
                             <div className="unit-container-blue hundredpercent-width tenpx-bottom-margin">
                                     <div className="dels-header">
@@ -84,8 +84,8 @@ render() {
                     </div>
                 </div>
             );
-        }
     }
+
 
     const mapStateToProps = (state) => ({
         todaydeliverables: state.todaydeliverables,

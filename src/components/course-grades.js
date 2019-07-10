@@ -5,8 +5,8 @@ export default function CourseGrades(props) {
     
         return (
                     <div>
-                            <div className="small-titles dark-label grade-label course-title" >Course:  {this.props.course}</div>
-                            <div className="small-titles light-label item-body course-grade">Current Grade:  {this.props.gradeNum}</div>
+                            <div className="small-titles dark-label grade-label course-title" >Course:  {props.course}</div>
+                            <div className="small-titles light-label item-body course-grade">Current Grade:  {props.gradeNum}</div>
                             <form>
                             
                                 <div>

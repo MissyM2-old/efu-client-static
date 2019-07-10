@@ -1,15 +1,10 @@
 import React from "react";
 import './css/home-page.css';
-
-
-
-import BackdropBlue from './backdrop-blue';
 import LoginPage from './login-page';
 
 export default function HomePage(props) {
         return (
               <div className="homepage-container">
-                  <BackdropBlue />
                   <div className="logo-container">
                             <div className="title-div">
                                 <div className="homepage-welcome">Welcome to</div>
@@ -30,3 +25,4 @@ export default function HomePage(props) {
               </div>
         );
     }
+

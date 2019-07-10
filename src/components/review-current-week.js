@@ -1,31 +1,30 @@
 import React from 'react';
+import {connect} from 'react-redux';
 
 import NavBar from "./navbar";
 import RightSideDrawer from './right-side-drawer';
-import Backdrop from './backdrop';
-
 import './css/review-current-week.css';
 
 import CourseGrades from './course-grades';
 
-export default function ReviewCurrentWeek(props) {
+export function ReviewCurrentWeek(props) {
 /*
         let weekClasses = 'dropdown unit-container-green';
-        const allweeks = this.props.thistermweeks.map((week, index) => {
+        const allweeks = props.thistermweeks.map((week, index) => {
             return (
                 <option
                     key={index}
                     value={week.weekNum}
                     className={weekClasses}
                     data-identifier={week.weekNum}
-                    onChange={this.setdivedWeek}
+                    onChange={setdivedWeek}
                 >
                     Week {week.weekNum}
                 </option>                    
             );
         });
 
-        const mycoursedropdown = this.props.thistermcourses.map((course, index) => {
+        const mycoursedropdown = props.thistermcourses.map((course, index) => {
             return (
                 <option key={index} >
                     {course.courseName}
@@ -33,7 +32,7 @@ export default function ReviewCurrentWeek(props) {
             );
         });
 
-        let mygrades = this.props.thisweekgrades;
+        let mygrades = props.thisweekgrades;
         mygrades = mygrades.map((grade, index) => {
            return ( 
 
@@ -172,3 +171,10 @@ export default function ReviewCurrentWeek(props) {
             
             );
     }
+
+    const mapStateToProps = (state) => ({
+        todaydeliverables: state.todaydeliverables,
+        thisweekdeliverables: state.thisweekdeliverables
+    });
+    
+    export default connect(mapStateToProps)(ReviewCurrentWeek);

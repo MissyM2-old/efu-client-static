@@ -8,7 +8,7 @@ export default class Term extends React.Component {
     setSelectedTerm(e) {
         e.preventDefault();
         const selterm = e.currentTarget.getAttribute("data-identifier");
-        this.props.getcurrentterm(selterm);
+        props.getcurrentterm(selterm);
 
 
     }
@@ -16,18 +16,18 @@ export default class Term extends React.Component {
 
         let termClasses = 'available-terms';
         // whatever term is in currentterm, the class should be selected
-        if (this.props.currentterm === this.props.termDesc) {
+        if (props.currentterm === props.termDesc) {
             termClasses='available-terms selected';
         }
         
         return (
                 <div 
                     className={termClasses}
-                    data-identifier={this.props.termDesc}
+                    data-identifier={props.termDesc}
                     onClick={(e) =>{
-                    this.setSelectedTerm(e)
+                    setSelectedTerm(e)
                 }}>
-                    {this.props.termDesc}
+                    {props.termDesc}
                 </div>
         );
 
