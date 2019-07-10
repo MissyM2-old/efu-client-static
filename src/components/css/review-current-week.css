@@ -1,0 +1,175 @@
+/*==========  Mobile First Method  ==========*/
+
+    /* Custom, iPhone Retina */ 
+    @media only screen and (min-width : 320px) {
+
+        ul {
+            padding: 0;
+        }
+
+        .myweek-details-list {
+            display:flex;
+            display:column;
+        }
+
+        .li-courses {
+            width: 20%;
+        }
+
+        
+
+        .rcw-weeks-row {
+            display:flex;
+            flex-direction:column;
+        }
+
+        .rcw-week-row {
+            display:block;
+            width: 100%;
+            padding-left: 5px;
+            padding-right: 5px;
+            margin-top:10px;
+          }
+
+
+        .unit-course-grade-blue {
+            border:1px solid var(--dark-med-gray);
+            font-size:12px;
+            font-family:var( --body-font-family); 
+            padding: 10px 10px 10px 10px; 
+            text-decoration:none; 
+            display:inline-block;
+            font-weight:bold; color: #FFFFFF;
+            background-color:var(--med-gray);        }
+
+        .weekdetail-container-green {
+            position:relative;
+            width: 100%;
+            text-decoration:none; 
+            display:inline-block;
+            border:1px solid var(--darkest-color);
+            color: var(--darkest-color);
+            background-color:var(--off-white-color);  
+            font-size:14px;
+            font-family:var(--body-font-family); 
+            padding: 10px 10px 10px 10px;     }
+
+        .grade {
+            color: var(--dark-med-gray);
+            font-family: var(--body-font-family);
+            font-size: 16px;
+            font-weight:bold;
+            padding-top: 8px;
+            padding-bottom: 8px;
+            width: 100%;
+        }
+
+        .select-week-dd {
+            width:80%;
+            margin-bottom: 10px;
+        }
+                
+        .week-row .weekdetail-container-green {
+            margin-bottom: 5px;
+        }  
+
+        .grade-input {
+            width:30%;
+            text-align:center;
+        }
+
+        .grade-label {
+            border: 1px solid var( --darkest-color);
+        }
+       
+                    
+                
+    }
+        
+        
+    /* Extra Small Devices, Phones */ 
+    @media only screen and (min-width : 480px) {
+        .course-grades {
+            display:flex;
+            flex-direction:row;
+            flex-wrap:wrap;
+            width: 100%;
+            margin:0 auto;
+
+        }
+
+        .weekdetail-container-green {
+            margin:5px;
+            width: 50%;
+        }
+
+        .unit-course-grade-blue {
+            width: 47%;
+        }
+
+        .grade-container {
+            display: flex;
+            justify-content: center;
+        }
+
+        .rcw-grades-list {
+            display: flex;
+            flex-wrap:wrap;
+            justify-content: flex-start;
+        }
+
+        .rcw-week-row {
+            width: 48%;
+           
+          }
+          .grade-label {
+            height:55px;
+        }
+        
+            
+      }
+  
+      /* Small Devices, Tablets */
+      @media only screen and (min-width : 768px) {
+            .course-grades {
+                display:flex;
+                flex-direction:row;
+            }
+
+            .unit-course-grade-blue {
+                width: 31%;
+            }
+
+            .select-week-dd {
+                width:50%;
+            }
+
+            .rcw-week-row {
+                width: 28%;
+               
+              }
+        }
+          
+        
+   
+  
+      /* Medium Devices, Desktops */
+      @media only screen and (min-width : 992px) {
+
+        .unit-course-grade-blue {
+            width: 15%;
+        }
+  
+      }
+  
+      /* Large Devices, Wide Screens */
+      @media only screen and (min-width : 1200px) {
+  
+      }
+  
+  
+  
+    
+  
+  
+  

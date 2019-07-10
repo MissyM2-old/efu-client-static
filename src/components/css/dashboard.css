@@ -1,0 +1,106 @@
+/*==========  Mobile First Method  ==========*/
+
+    /* Custom, iPhone Retina */ 
+    @media only screen and (min-width : 320px) {
+
+        .row-week-list-labels {
+            display:flex;
+            flex-direction: row;
+            list-style-type: none;
+            width: 100%;
+            font-size: 14px;
+        }
+
+        .row-week-list-labels {
+            display: none;
+        }
+
+        .whats-due {
+            position:relative;
+            font-family: var(--header-font-family);
+            color: var(--darkest-color);
+            font-weight: bold;
+            font-size: 20px;
+            text-align:center;
+            margin-bottom: 12px;
+        }
+
+        .deliverable-container-green {
+            position:relative;
+            width: 100%;
+            border:1px solid #7f8f79; 
+            text-decoration:none; 
+            display:inline-block;
+            color: var(--darker-blue-color);
+            border:1px solid var(--dark-med-gray); 
+            font-size:14px;
+            font-family:var(--body-font-family); 
+            padding: 10px 10px 10px 10px; 
+            color: #FFFFFF;
+            background-color: var(--med-gray );
+        }
+
+        .week {
+            margin-bottom: 10px;
+        }
+
+        .dels-label {
+            font-size:18px;
+        }
+    
+        .dels-date {
+            font-size: 16px;
+            margin: 4px auto;
+        }
+
+        .dels-header {
+            margin-bottom: 10px;
+        }
+    
+        .dels-subhead{
+            display:flex;
+            flex-direction:row;
+        }
+
+        .message-subtext {
+            color:var(--darkest-color);
+            font-size: 18px;
+            text-align:left;
+            padding-left: 25px;
+        }
+
+
+    }
+
+    /* Extra Small Devices, Phones */ 
+    @media only screen and (min-width : 480px) {
+       
+
+    }
+
+    /* Small Devices, Tablets */
+    @media only screen and (min-width : 768px) {
+        .dueDate {
+            font-weight: bold;
+            color: var(--off-white-color);
+            background-color: var(--med-gray);
+        }
+    
+        .row-week-list-labels {
+            display: none;
+        }
+    }
+
+    /* Medium Devices, Desktops */
+    @media only screen and (min-width : 992px) {
+
+    }
+
+    /* Large Devices, Wide Screens */
+    @media only screen and (min-width : 1200px) {
+
+    }
+
+
+
+

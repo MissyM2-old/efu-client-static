@@ -1,0 +1,21 @@
+
+
+.term-section {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+}
+
+
+.single-term {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid;
+}
+
+
+
+
+
+
+

@@ -1,0 +1,194 @@
+/*==========  Mobile First Method  ==========*/
+
+    /* Custom, iPhone Retina */ 
+    @media only screen and (min-width : 320px) {
+        .tenpx-margin {
+            margin: 10px;
+        }
+        .profile-header {
+            margin-top: 150px;
+        }
+
+        .profile-nav {
+            display:flex;
+            flex-direction: row;
+            padding: 1% 0;
+            background-color: #aaa;
+        
+        }
+
+        .term-menu {
+            margin: 0 auto;
+        }
+
+        .course-section {
+            display: flex;
+            flex-direction: column;
+            margin: 0 auto;
+        }
+
+        .profile-row {
+            display:flex;
+            flex-direction: row;
+            flex-wrap:wrap;
+            justify-content: center;
+            list-style-type: none;
+        }
+
+
+        .profile-list {
+            list-style-type: square;
+        }
+
+        .courses-container {
+            width: 90%;
+            margin: 160px auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .course-container-blue {
+            width: 100%;
+            border:1px solid var(--dark-med-gray);
+            font-size:12px;
+            font-family:var( --body-font-family); 
+            padding: 10px 10px 10px 10px; 
+            margin-bottom: 10px;
+            text-decoration:none; 
+            display:inline-block;
+            color: #FFFFFF;
+            background-color:var(--med-gray)   
+        }
+
+          .course-row {
+            display:flex;
+            flex-direction: row;
+            list-style-type: none;
+            justify-content:center;
+            flex-wrap:wrap;
+        
+          }
+
+        .course-label {
+            font-size: 16px;
+            text-align:left;
+            font-family: var(--body-font-family)
+        }
+
+        .courseName{
+            width: 60%;
+        }
+
+        .courseDesc{
+            width: 85%;
+        }
+
+        .add-course-form {
+            width: 75%;
+            margin:15px auto;
+
+        }
+
+        .add-course-form form {
+            text-align:left;
+            width: 100%;
+            margin:0 auto;
+            padding: 8px;
+            background-color: var(--off-white-color);
+            -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.1);
+            -moz-box-shadow: 0 0 4px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.1);
+        }
+
+        .add-course-form h3 {
+            text-align:center;
+        }
+
+        .courseName-unit input,
+        .courseDesc-unit textarea {
+            padding:3px;
+            font-family: var(--body-font-family);
+            font-size: 16px;
+            color:var(--dark-med-gray);
+            background-color: white;
+            width: 100%;
+        }
+    
+       
+
+    }
+
+
+    @media only screen and (min-width : 480px) {
+        .add-course-form form {
+            width: 80%;
+        }
+
+    
+    }
+
+    /* Small Devices, Tablets */
+    @media only screen and (min-width : 768px) {
+        .courses-container {
+            width: 90%;
+            top: 60px;
+        }
+
+        .row-deliverable {
+            flex-direction: row;
+        }
+    
+        .column-item {
+            width: 50%;
+        }
+        /*
+        .dueDate {
+            font-weight: bold;
+            color: var(--off-white-color);
+            background-color: var(--med-gray);
+        }
+        */
+    
+        .row-week-list-labels {
+            display: none;
+        }
+
+        .course-container-blue {
+            border:1px solid var(--dark-med-gray);
+            font-size:12px;
+            font-family:var( --body-font-family); 
+            padding: 10px 10px 10px 10px; 
+            text-decoration:none; 
+            display:inline-block;
+            color: #FFFFFF;
+            background-color:var(--med-gray);
+         }
+
+          .add-course-form form {
+            width: 50%;
+        }
+
+    }
+
+    /* Medium Devices, Desktops */
+    @media only screen and (min-width : 992px) {
+
+    }
+
+    /* Large Devices, Wide Screens */
+    @media only screen and (min-width : 1200px) {
+
+    }
+
+
+
+
+  
+
+
+
+
+
+
+
+

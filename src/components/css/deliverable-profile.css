@@ -1,0 +1,125 @@
+/*==========  Mobile First Method  ==========*/
+
+    /* Custom, iPhone Retina */ 
+    @media only screen and (min-width : 320px) {
+        .deliverable-sub-section li {
+            background-color:var(--off-white-color);
+            color: var(--darkest-color);
+        }
+        
+        .week-list-label {
+            text-align:center;
+        }
+
+        .deliverable-sub-section {
+            display:flex;
+            flex-direction:row;
+        }
+
+        .row-deliverable li.dueDate {
+            font-size: 14px;
+            background-color:var(--med-gray);
+            color: var(--off-white-color);
+        }
+    
+        .row-deliverable li.dueDate {
+            font-weight: bold;
+        }
+
+        .three-items-top,
+        .three-items-bottom{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            padding: 5px;
+        }
+
+        .three-items-bottom {
+            border-top: 1px solid var(--off-white-color);
+            margin-top: 5px;
+        }
+
+        .select-prephrs,
+        .select-impact,
+        .input-desc {
+            text-align:center;
+            margin:0 auto;
+        }
+
+        .select-prephrs {
+            width: 20%;
+        }
+
+        .select-impact {
+            width: 30%;
+        }
+
+        .input-desc {
+            width: 48%;
+        }
+
+        .deliverable-field {
+            font-family: var(--body-font-family);
+            padding: 3px;
+            margin: 5px;
+        }
+
+        .course-name{
+            width: 96%;
+        }
+
+        .del-read-only {
+            color: var( --darkest-color);
+            font-size:16px;
+
+        }
+
+        .prephrs,
+        .desc,
+        .impact {
+            color: var( --darkest-color);
+            font-size:18px;
+            font-weight:bold;
+        }
+
+
+
+        
+        
+        
+    }
+
+    /* Extra Small Devices, Phones */ 
+    @media only screen and (min-width : 480px) {
+        .three-items-top {
+            display: flex;
+            flex-direction: row;
+        }
+       
+
+    }
+
+    /* Small Devices, Tablets */
+    @media only screen and (min-width : 768px) {
+        .three-items-bottom {
+            display: flex;
+            flex-direction: row;
+        }
+        
+
+    
+        
+    }
+
+    /* Medium Devices, Desktops */
+    @media only screen and (min-width : 992px) {
+
+    }
+
+    /* Large Devices, Wide Screens */
+    @media only screen and (min-width : 1200px) {
+
+    }
+
+
+
