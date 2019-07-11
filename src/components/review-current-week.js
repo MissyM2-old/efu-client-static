@@ -1,88 +1,71 @@
 import React from 'react';
 import {connect} from 'react-redux';
 
-import NavBar from "./navbar";
-import RightSideDrawer from './right-side-drawer';
-import './css/review-current-week.css';
 
 import CourseGrades from './course-grades';
 
-export function ReviewCurrentWeek(props) {
-/*
-        let weekClasses = 'dropdown unit-container-green';
-        const allweeks = props.thistermweeks.map((week, index) => {
+export class ReviewCurrentWeek extends React.Component {
+    render() {
+        const allweeks = this.props.thistermweeks.map(week => {
             return (
-                <option
-                    key={index}
-                    value={week.weekNum}
-                    className={weekClasses}
-                    data-identifier={week.weekNum}
-                    onChange={setdivedWeek}
-                >
-                    Week {week.weekNum}
-                </option>                    
+                <option>Week {week.weekNum}</option>                    
             );
         });
 
-        const mycoursedropdown = props.thistermcourses.map((course, index) => {
+        const mycoursedropdown = this.props.thistermcourses.map(course => {
             return (
-                <option key={index} >
-                    {course.courseName}
-                </option>
+                <option >{course.courseName}</option>
             );
         });
 
-        let mygrades = props.thisweekgrades;
+        let mygrades = this.props.thisweekgrades;
         mygrades = mygrades.map((grade, index) => {
            return ( 
-
-                <li className="rcw-week-row grade-container-green" id={grade.id} index={index + 5}>
+                <li id={grade.id}>
                         <CourseGrades {...grade}  /> 
                 </li> 
            );
         });
-*/
+
         
         return (
-            <div className="content-container">
-                <NavBar />
+            <div>
+                
                     <div className="content-sub-container">
                             <header className="page-header">
                                 <h2>Review Last Week</h2>
                                 <h3>Term:  Summer (4 Weeks)</h3>
                                 <h3>Week 1</h3>
                             </header>
-                            <div className="hundredpercent-width">
-                                <div 
-                                    className="div-week-dd"
-                                    defaultValue="1">
-                                       all weeks will go here {/* {allweeks}*/}
-                                </div>
-                            </div>
+                            <label>Select a week</label>
+                            <select type="text">
+                                    {allweeks}
+                            </select>
 
                             <div className="section-container">
 
-                                <div className="unit-container-blue hundredpercent-width tenpx-bottom-margin">
+                                <div>
                                         <h3>How did you feel about your week?</h3>
                                         <h4>Update week 1 now.</h4>
-                                        <div className="list-vertical">
-                                                    <ul className="weeks-row">
-                                                                <li className="week-row">
-                                                                        <div className="weekdetail-container-green">
-
+                                        <div>
+                                                    <ul className="medium-width left-padding">
+                                                           <li>
+                                                                        <div className="border background-color-light-gray center">
                                                                             <form action="/" >
-                                                                                <div className="small-titles dark-label week-label likedLeast">Liked Least</div>
-                                                                                
+                                                                                <div>Liked Least</div>
                                                                                 <div>
                                                                                     <div
-                                                                                        className="hundredpercent-width"
                                                                                         type="text"
                                                                                         >English 101
                                                                                     </div>
                                                                                 </div>
+                                                                                <div>
+                                                                                        <select type="text">
+                                                                                                    {mycoursedropdown}
+                                                                                        </select>
+                                                                                    </div>
                                                                                 <div className="item">
                                                                                     <button
-                                                                                        className="blue-btn center-btn fivepx-margin"
                                                                                         type="submit"
                                                                                     >
                                                                                         Save
@@ -90,16 +73,20 @@ export function ReviewCurrentWeek(props) {
                                                                                 </div>
                                                                             </form>
                                                                         </div>
-                                                                        <div className="weekdetail-container-green">
+                                                                        <div className="border background-color-light-gray center">
                                                                             <form action="/" >
-                                                                            <div className="small-titles dark-label week-label likedMost">Liked Most</div>
-                                                                                <div className="hundredpercent-width">
+                                                                            <div>Liked Most</div>
+                                                                                <div>
                                                                                     <div>Bio 101
                                                                                     </div>
                                                                                 </div>
+                                                                                <div>
+                                                                                        <select type="text">
+                                                                                                    {mycoursedropdown}
+                                                                                        </select>
+                                                                                </div>
                                                                                 <div className="item">
                                                                                     <button
-                                                                                        className="blue-btn center-btn fivepx-margin"
                                                                                         type="submit"
                                                                                         value="Update"
                                                                                     >
@@ -109,18 +96,23 @@ export function ReviewCurrentWeek(props) {
                                                                             </form>
                                                                         </div> 
                                                                 </li>
-                                                                <li className="week-row">
-                                                                        <div className="weekdetail-container-green">
+                                                                <li>
+                                                                        <div className="border background-color-light-gray center">
                                                                             <form action="/" >
-                                                                            <div className="small-titles dark-label week-label likedLeast">Most Difficult</div>
+                                                                            <div>Most Difficult</div>
                                                                                     <div>
-                                                                                        <div className="hundredpercent-width">
+                                                                                        <div>
                                                                                                     Physics 101
                                                                                         </div>
                                                                                     </div>
+                                                                                    <div>
+                                                                                        <select type="text">
+                                                                                                    {mycoursedropdown}
+                                                                                        </select>
+                                                                                    </div>
+                                                                                    
                                                                                     <div className="item">
                                                                                     <button
-                                                                                        className="blue-btn center-btn fivepx-margin"
                                                                                         type="submit"
                                                                                         value="Update"
                                                                                     >
@@ -129,17 +121,21 @@ export function ReviewCurrentWeek(props) {
                                                                                 </div>
                                                                             </form>
                                                                         </div>
-                                                                        <div className="weekdetail-container-green">
+                                                                        <div className="border background-color-light-gray center">
                                                                                 <form action="/" >
-                                                                                <div className="small-titles dark-label week-label likedLeast">Least Difficult</div>
+                                                                                <div>Least Difficult</div>
                                                                                         <div>
-                                                                                            <div className="hundredpercent-width">
+                                                                                            <div>
                                                                                                     English 101
                                                                                             </div>
                                                                                         </div>
+                                                                                        <div>
+                                                                                            <select type="text">
+                                                                                                        {mycoursedropdown}
+                                                                                            </select>
+                                                                                        </div>
                                                                                         <div className="item">
                                                                                             <button
-                                                                                                className="blue-btn center-btn fivepx-margin"
                                                                                                 type="submit"
                                                                                                 value="Update"
                                                                                             >
@@ -154,12 +150,12 @@ export function ReviewCurrentWeek(props) {
                                         </div>
                                 </div>
 
-                                <div className="unit-container-blue hundredpercent-width tenpx-bottom-margin">
+                                <div className="border">
                                         <h3 >How were your grades this week?</h3>
                                         <h4>Add grades for week 1 now.</h4>
-                                        <div className="grade-container">
-                                            <ul className="rcw-grades-list">
-                                                GRADES WILL GO HERE {/*{mygrades}*/}
+                                        <div>
+                                            <ul className="column">
+                                                {mygrades}
                                             </ul>
                                         </div>
                                 </div>
@@ -171,10 +167,12 @@ export function ReviewCurrentWeek(props) {
             
             );
     }
+}
 
     const mapStateToProps = (state) => ({
-        todaydeliverables: state.todaydeliverables,
-        thisweekdeliverables: state.thisweekdeliverables
+        thisweekgrades: state.thisweekgrades,
+        thistermweeks: state.thistermweeks,
+        thistermcourses: state.thistermcourses
     });
     
     export default connect(mapStateToProps)(ReviewCurrentWeek);

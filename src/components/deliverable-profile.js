@@ -2,62 +2,52 @@ import React from 'react';
 
 import {connect} from 'react-redux';
 
-import './css/deliverable-profile.css';
-
-export function DeliverableProfile(props) {
+export class DeliverableProfile extends React.Component {
+    render() {
   
-       const prephrsoptions = props.allprephrs.map((option, index) => {
+       const prephrsoptions = this.props.allprephrs.map(option => {
                 return (
-                    <option 
-                            key = {index}
-                            value={option}
-                        >
-                               {option}
-                    </option>
+                    <option value={option}>{option}</option>
                 );
         });
 
 
     return (  
-                <div>
-                         <div className="course-container-blue tenpx-bottom-margin">
+                <div className="row border center medium-width">
+                         <div>
                                 <div>
                                     <form>
                                             <div className="center">
-                                                    <div className="deliverable-sub-section three-items-top">
+                                                    <div className="row" >
                                                             <div className="column">
-                                                                <label className="small-titles light-label"> Course Name</label>
-                                                                <div className="del-read-only">{props.courseName}</div>
+                                                                <label> Course Name</label>
+                                                                <div>{this.props.courseName}</div>
                                                             </div>
                                                             <div className="column">
-                                                                    <label className="small-titles light-label">Due Date</label>
-                                                                    <div className="del-read-only">{props.dueDateFormatted}</div>
+                                                                    <label>Due Date</label>
+                                                                    <div>{this.props.dueDateFormatted}</div>
                                                             </div>
                                                             <div className="column">
-                                                                    <label className="small-titles light-label"> Deliverable Name</label>
-                                                                    <div className="del-read-only">{props.deliverableName}</div>
+                                                                    <label> Deliverable Name</label>
+                                                                    <div>{this.props.deliverableName}</div>
                                                                 </div> 
                                                     </div>
-                                                    <div className="deliverable-sub-section three-items-bottom">
-                                                            <div className="select-prephrs">
-                                                                                <label className="small-titles light-label">Prep Hours</label>
+                                                    <div>
+                                                            <div>
+                                                                                <label>Prep Hours</label>
                                                                                 <select
-                                                                                    className="center"
                                                                                     type="number"
                                                                                     defaultValue="6"
                                                                                     aria-label="prephrs"
                                                                                 >
-                                                                                <option
-                                                                                    key="1"
-                                                                                    value={props.prephrs}
-                                                                                >
-                                                                                    {props.prephrs}
+                                                                                <option>
+                                                                                    {this.props.prephrs}
                                                                                 </option>
                                                                                 {prephrsoptions}
                                                                                 </select>
                                                                 </div>
-                                                            <div className="select-impact">
-                                                                        <label className="small-titles light-label">Impact</label>
+                                                            <div>
+                                                                        <label>Impact</label>
                                                                         <select
                                                                                 type="text"
                                                                                 defaultValue="Moderate"
@@ -65,9 +55,9 @@ export function DeliverableProfile(props) {
                                                                         >
                                                                             <option
                                                                                 key="1"
-                                                                                value={props.impact}
+                                                                                value={this.props.impact}
                                                                             >
-                                                                                {props.impact}
+                                                                                {this.props.impact}
                                                                             </option>
                                                                             <option 
                                                                                 key = "2"
@@ -95,29 +85,25 @@ export function DeliverableProfile(props) {
                                                                             </option>
                                                                         </select>
                                                                 </div>    
-                                                            <div className="input-desc">
-                                                                    <label className="small-titles light-label"> Description</label>
+                                                            <div>
+                                                                    <label> Description</label>
                                                                     <input
                                                                             type="text"
-                                                                            defaultValue={props.desc}
+                                                                            defaultValue={this.props.desc}
                                                                             aria-label="Desc"
                                                                         />
                                                                 
                                                             </div>
                                                     </div>
                                                     
-                                                    <div className="action-btns">
+                                                    <div>
                                                             <button 
-                                                                name="action-btn"
-                                                                className="green-btn btn-small fivepx-margin" 
                                                                 type="submit" 
                                                                 value="Update"
                                                             >
                                                                 Update
                                                             </button>
                                                             <button 
-                                                                name="action-btn"
-                                                                className="green-btn btn-small fivepx-margin" 
                                                                 type="button"
                                                                 value="Delete"
                                                             >
@@ -131,10 +117,10 @@ export function DeliverableProfile(props) {
                 </div> 
             );
         } 
+    }
 
         const mapStateToProps = (state) => ({
-            todaydeliverables: state.todaydeliverables,
-            thisweekdeliverables: state.thisweekdeliverables
+            allprephrs: state.allprephrs
         });
         
         export default connect(mapStateToProps)(DeliverableProfile);

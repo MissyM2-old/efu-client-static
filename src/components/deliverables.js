@@ -1,40 +1,24 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import './css/deliverables.css';
 
-import NavBar from "./navbar";
-import RightSideDrawer from './right-side-drawer';
 import DeliverableProfile from './deliverable-profile';
 
 
 
 
-export function Deliverables(props) {
+export class Deliverables extends React.Component {
+        render() {
                 
-                const thiscoursedeliverables = props.thiscoursedeliverables.map((deliverable, index) => {
+                const thistermdeliverables = this.props.thistermdeliverables.map((deliverable, index) => {
                         return (
-                                <ul key={index} id={deliverable.id} className="deliverable-width tenpx-bottom-margin ">
-                                        <DeliverableProfile
-                                                {...deliverable}
-                                                {...props}
-                                        />   
-                                </ul>
-                        );
-                });
-
-                const thistermdeliverables = props.thistermdeliverables.map((deliverable, index) => {
-                        return (
-                                <ul key={index} id={deliverable.id} className="deliverable-width tenpx-bottom-margin ">
-                                        <DeliverableProfile
-                                                {...deliverable}
-                                                {...props}
-                                        />   
+                                <ul key={index} id={deliverable.id} className="center">
+                                        <DeliverableProfile  {...deliverable} />   
                                 </ul>
                         );
                 });
 
 
-                const mycoursedropdown = props.thistermcourses.map((course, index) => {
+                const mycoursedropdown = this.props.thistermcourses.map((course, index) => {
                         return (
                             <option 
                                 key={index}
@@ -45,38 +29,36 @@ export function Deliverables(props) {
                         );
                     });
                 return (
-                        <div className="content-container">
-                                <div className="">
-                                        <NavBar {...props} />
-                                </div> 
-                                <div className="content-sub-container">
-                                                <header className="page-header">
+                        <div className="content-sub-container">
+                                <div>
+                                                <header className="center">
                                                         <h2>My Deliverables</h2>
-                                                        <h3>Term: {props.currentterm}</h3>
-                                                        <h4>{props.deliverableMessage}</h4>
+                                                        <h3>Term: {this.props.currentterm}</h3>
                                                 </header>
                                                 
-                                                <div
+                                                <select
                                                         type="text"
-                                                        className="dropdown unit-container-green fivepx-margin course"
                                                         >
-                                                                English 101
-                                                </div>
-                                                                SHOW DELIVERABLES FOR ENGLISH 101{thistermdeliverables}
-                                                      
-                                                       
+                                                                {mycoursedropdown}
+                                                </select>
+                                                <div>
+                                                        {thistermdeliverables}
+                                                </div>      
                                         </div>
                         </div>
                         
                 );
 
 
-        }  
+        } 
+} 
         
 const mapStateToProps = (state) => ({
-        todaydeliverables: state.todaydeliverables,
-        thisweekdeliverables: state.thisweekdeliverables
-        });
+        thiscoursedeliverables: state.thiscoursedeliverables,
+        thistermdeliverables: state.thistermdeliverables,
+        thistermcourses: state.thistermcourses,
+        currentterm: state.currentterm
+});
         
 export default connect(mapStateToProps)(Deliverables);
         

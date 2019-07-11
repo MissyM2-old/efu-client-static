@@ -9,20 +9,21 @@ export default function Course(props) {
         return (
             <div>
                 <form>
-                    <div className="course-container-blue">
+                    <div>
                             <div className="column">
                                 <div>
-                                    <label className="small-titles light-label">Course</label>
+                                    <label>Course</label>
                                     <input
                                         type="text"
-                                        defaultValue='Bio 101'
+                                        defaultValue={props.courseName}
                                         aria-label="courseName"
                                     />
+                                    
                                 </div>
                             </div>
                             <div className="column">
                                 <div>
-                                            <label className="small-titles light-label">Details</label>
+                                            <label>Details</label>
                                             <textarea
                                                 placeholder="Course Description"
                                                 type="text"
@@ -31,21 +32,19 @@ export default function Course(props) {
                                                 wrap="soft"
                                                 size="60"
                                                 name="CourseDesc"
-                                                defaultValue='The study of biological systems'
+                                                defaultValue={props.courseDesc}
                                                 aria-label="CourseDesc"
                                         />
                                 </div>
                             </div>
-                            <div className="action-btns">
-                                <button 
-                                    className="green-btn btn-small fivepx-margin" 
+                            <div className="center">
+                                <button
                                     type="submit" 
                                     value="Update"
                                 >
                                     Update
                                 </button>
-                                <button 
-                                    className="green-btn btn-small fivepx-margin"
+                                <button
                                 >
                                     Delete
                                 </button>

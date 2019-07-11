@@ -4,21 +4,21 @@ import LoginPage from './login-page';
 
 export default function HomePage(props) {
         return (
-              <div className="homepage-container">
+              <div className="content-sub-container">
                   <div className="logo-container">
-                            <div className="title-div">
-                                <div className="homepage-welcome">Welcome to</div>
-                                <div className="homepage-title">Executive Followup</div>
+                            <div>
+                                <h2>Welcome to</h2>
+                                <h3>Executive Followup</h3>
 
                             </div>
-                            <h3 className="homepage-tagline">
+                            <h4>
                                 The app for students to get control of their 
                                 course deliverables and grades
-                            </h3>
+                            </h4>
                             
                     </div>
                     
-                        <div>
+                        <div className="small-width">
                                 <LoginPage />
                         </div>          
                                     

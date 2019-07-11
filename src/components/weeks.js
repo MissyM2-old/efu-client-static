@@ -1,52 +1,52 @@
 import React from 'react';
+import {connect} from 'react-redux';
 
-import NavBar from "./navbar";
-import RightSideDrawer from './right-side-drawer';
 
 import './css/weeks.css';
 
 
-export default function Weeks(props) {
-               
-        /*       
-                const weeks = props.thistermweeks.map((week, index) => {
+export class Weeks extends React.Component {
+        render() {
+                const weeks = this.props.thistermweeks.map((week, index) => {
                         return (
-                                <div className="unit-container-blue hundredpercent-width tenpx-bottom-margin" key={index + 100}>
+                                <div>
                                         <h3>Week Number {week.weekNum}</h3>
                                         <h4>Attitudes</h4>
                                         
-                                        <ul key={index} className="weeks-row">
-                                                <li className="week-row">
-                                                        <div className="week-item">
-                                                                <div className="small-titles dark-label week-label likedLeast">liked Least</div>
-                                                                <div className="small-titles light-label item-body">{week.likedLeast}</div>
+                                        <ul>
+                                                <li className="attitude">
+                                                        <div className="border background-color-light-gray">
+                                                                <div>liked Least</div>
+                                                                <div>{week.likedLeast}</div>
                                                         </div>
-                                                        <div className="week-item">
-                                                                <div className="small-titles dark-label week-label likedMost">Liked Most</div>
-                                                                <div className="small-titles light-label item-body">{week.likedMost}</div>
-                                                        </div>
-                                                </li>
-                                                <li className="week-row">
-                                                        <div className="week-item">
-                                                                <div className="small-titles dark-label week-label mostDifficult">Most Difficult</div>
-                                                                <div className="small-titles light-label item-body">{week.mostDifficult}</div>
-                                                        </div>
-                                                        <div className="week-item">
-                                                                <div className="small-titles dark-label week-label leastDifficult">Least Difficult</div>
-                                                                <div className="small-titles light-label item-body">{week.leastDifficult}</div>
+                                                        <div className="border background-color-light-gray">
+                                                                <div>Liked Most</div>
+                                                                <div>{week.likedMost}</div>
                                                         </div>
                                                 </li>
+                                                <li className="attitude">
+                                                        <div className="border background-color-light-gray">
+                                                                <div>Most Difficult</div>
+                                                                <div>{week.mostDifficult}</div>
+                                                        </div>
+                                                        <div className="border background-color-light-gray">
+                                                                <div>Least Difficult</div>
+                                                                <div>{week.leastDifficult}</div>
+                                                        </div>
+                                                </li >
                                         </ul>
                                         <h4>Courses and Grades</h4>
-                                        <div className="weeks-row">
+                                        <div>
 
-                                                {props.thistermgrades.filter(grade => grade.week === week.weekNum )
-                                                .map((grade, index) => {
+                                                {this.props.thistermgrades.map(grade => {
                                                                 return (
-                                                                        <div key={index + 1} className="grade-container-green fivepx-margin">
-                                                                                <div className="small-titles dark-label week-label course-title">{grade.course}</div>
-                                                                                <div className="small-titles light-label item-body course-grade">{grade.gradeNum}</div>
-                                                                        </div>
+                                                                        <ul className="border background-color-light-gray course-grades">
+                                                                                <div className="center">
+                                                                                        <div>{grade.course}</div>
+                                                                                        <div>{grade.gradeNum}</div>
+                                                                                </div>
+                                                                                
+                                                                        </ul>
                                                                 );
                                                 })
                                         }
@@ -56,25 +56,30 @@ export default function Weeks(props) {
                         );
 
                 });
-                */
+
                 return (
-                          <div className="content-container">
-                                <NavBar />
                                 <div className="content-sub-container">
                                         <header className="page-header">
                                                 <h2>Your Weeks</h2>
-                                                <h3>Term:  CURRENT TERM WILL GO HERE</h3>
+                                                <h3>Term:  Summer (4 weeks)</h3>
                                         </header>
                                         
                                         <div className="section-container">
                                                 <div className="list-vertical this-week-weeks">
-                                                        WEEKS WILL GO HERE{/*{weeks}*/}
+                                                        {weeks}
                                                 </div> 
                                         </div>
                                 </div>
                                 
-                        </div>
-                                
                                         
                 );
         }
+
+                
+}
+const mapStateToProps = (state) => ({
+        thistermweeks: state.thistermweeks,
+        thistermgrades: state.thistermgrades
+    });
+    
+    export default connect(mapStateToProps)(Weeks);

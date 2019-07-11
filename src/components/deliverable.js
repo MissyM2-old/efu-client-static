@@ -4,36 +4,36 @@ import './css/deliverable.css';
 
 export default function Deliverable(props) {
     return (
-                <div>
-                        <div className="center">
-                                <div className="deliverable-sub-section sec-one">
+                <div className="border background-color-light-gray center full-width">
+                        <div className="center row">
+                                <div>
                                         <div className="column">
-                                            <label className="small-titles light-label"> Course Name</label>
-                                            <div className="deliverable-field course-name">{props.courseName}</div>
+                                            <label> Course Name</label>
+                                            <div>{props.courseName}</div>
                                         </div>
                                         <div className="column">
-                                                <label className="small-titles light-label">Due Date</label>
-                                                <div className="deliverable-field dueDateFormatted">{props.dueDateFormatted}</div>
+                                                <label>Due Date</label>
+                                                <div>{props.dueDateFormatted}</div>
                                         </div>
                                 </div>
-                                <div className="deliverable-sub-section sec-three">
+                                <div>
                                             <div className="column">
-                                                    <label className="small-titles light-label">Prep Hours</label>
-                                                    <div className="deliverable-field prephrs">{props.prephrs}</div>
+                                                    <label>Prep Hours</label>
+                                                    <div>{props.prephrs}</div>
                                             </div>
                                             <div className="column">
-                                                <label className="small-titles light-label"> Deliverable Name</label>
-                                                <div className="deliverable-field deliverableName">{props.deliverableName}</div>
+                                                <label> Deliverable Name</label>
+                                                <div>{props.deliverableName}</div>
                                             </div> 
                                 </div>
-                                <div className="deliverable-sub-section sec-two">
+                                <div>
                                             <div className="column">
-                                                    <label className="small-titles light-label"> Description</label>
-                                                    <div className="deliverable-field desc">{props.desc}</div>
+                                                    <label> Description</label>
+                                                    <div>{props.desc}</div>
                                             </div>
                                             <div className="column">
-                                                    <label className="small-titles light-label"> Impact</label>
-                                                    <div className="deliverable-field inpact">{props.inpact}</div>
+                                                    <label> Impact</label>
+                                                    <div>{props.inpact}</div>
                                             </div>    
                                 </div>
                                 

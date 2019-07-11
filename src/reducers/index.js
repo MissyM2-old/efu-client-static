@@ -1,12 +1,12 @@
 import * as actions from '../actions';
 
 const initialState = {
-    currentsuggestion:{
+    currentsuggestion:[{
         category: "Study Skills",
         credit: "anonymous",
         desc: "print things out",
         id: "5cc5c453f66e162ea7842295"
-    },
+    }],
 
     // state: for specific ui 
     rightSideDrawerOpen: false,
@@ -38,7 +38,11 @@ const initialState = {
     //state: terms info
     currentterm: "Summer (4 weeks)",
     selectingterm:false,
-    terms:['Spring (16 weeks)','Summer (4 weeks)', 'Fall (16 weeks)'],
+    terms:[
+        {termDesc: 'Spring (16 weeks)'},
+        {termDesc:'Summer (4 weeks)'},
+        {termDesc: 'Fall (16 weeks)'}
+    ],
 
     //state: weeks info
     currentweek: 1,
@@ -46,10 +50,10 @@ const initialState = {
     selectingweek:false,
     thistermweekcount:4,
     thistermweeks: [
-            {studentFullName: "Cat Maloney", studentUserName: "cat@gmail.com", termDesc: "Summer (4 weeks)", weekNum: 1},
-            {studentFullName: "Cat Maloney", studentUserName: "cat@gmail.com", termDesc: "Summer (4 weeks)", weekNum: 2},
-            {studentFullName: "Cat Maloney", studentUserName: "cat@gmail.com", termDesc: "Summer (4 weeks)", weekNum: 3},
-            {studentFullName: "Cat Maloney", studentUserName: "cat@gmail.com", termDesc: "Summer (4 weeks)", weekNum: 4},
+            {studentFullName: "Cat Maloney", studentUserName: "cat@gmail.com", termDesc: "Summer (4 weeks)", weekNum: 1, likedMost: "History 101", likedLeast: "Math 101", mostDifficult: "Philosophy 101", leastDifficult: "History 101"},
+            {studentFullName: "Cat Maloney", studentUserName: "cat@gmail.com", termDesc: "Summer (4 weeks)", weekNum: 2, likedMost: "History 101", likedLeast: "Math 101", mostDifficult: "Math 101", leastDifficult: "History 101"},
+            {studentFullName: "Cat Maloney", studentUserName: "cat@gmail.com", termDesc: "Summer (4 weeks)", weekNum: 3, likedMost: "Math 101", likedLeast: "Philosophy 101", mostDifficult: "Philosophy 101", leastDifficult: "History 101"},
+            {studentFullName: "Cat Maloney", studentUserName: "cat@gmail.com", termDesc: "Summer (4 weeks)", weekNum: 4, likedMost: "History 101", likedLeast: "History 101", mostDifficult: "Philosophy 101", leastDifficult: "History 101"},
     ],
     thisweekdetailsold:[{
         likedMost:"Bio 101",
@@ -217,8 +221,57 @@ const initialState = {
 
     // state: grades info
     thistermgradecount:16,
-    thistermgrades:[],
-    thisweekgrades:[],
+    thistermgrades:[
+        {
+        termDesc:"Summer (4 weeks)",
+        course: "History 101",
+        weekNum: 1,
+        gradeNum: 100
+        },
+        {
+        termDesc:"Summer (4 weeks)",
+        course: "Science 101",
+        weekNum: 1,
+        gradeNum: 65
+        },
+        {
+        termDesc:"Summer (4 weeks)",
+        course: "Philosophy 101",
+        weekNum: 1,
+        gradeNum: 80
+        },
+        {
+        termDesc:"Summer (4 weeks)",
+        course: "Math 101",
+        weekNum: 1,
+        gradeNum: 75
+        }
+    ],
+    thisweekgrades:[{
+        termDesc:"Summer (4 weeks)",
+        course: "History 101",
+        weekNum: 1,
+        gradeNum: 100
+        },
+        {
+        termDesc:"Summer (4 weeks)",
+        course: "Science 101",
+        weekNum: 1,
+        gradeNum: 65
+        },
+        {
+        termDesc:"Summer (4 weeks)",
+        course: "Philosophy 101",
+        weekNum: 1,
+        gradeNum: 80
+        },
+        {
+        termDesc:"Summer (4 weeks)",
+        course: "Math 101",
+        weekNum: 1,
+        gradeNum: 75
+        }
+    ],
     thisweekcoursegrades:[]
 }
 

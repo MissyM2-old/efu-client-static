@@ -4,21 +4,18 @@ import './css/review-current-week.css';
 export default function CourseGrades(props) {
     
         return (
-                    <div>
-                            <div className="small-titles dark-label grade-label course-title" >Course:  {props.course}</div>
-                            <div className="small-titles light-label item-body course-grade">Current Grade:  {props.gradeNum}</div>
-                            <form>
-                            
+                    <div className="border background-color-light-gray course-grades">
+                            <div className="center" >Course:  {props.course}</div>
+                            <div  className="center">Current Grade:  {props.gradeNum}</div>
+                            <form className="center">
                                 <div>
                                     <input
-                                        className="grade-input"
                                         type="number" 
                                         value="92"
                                     />
                                 </div>
-                                <div className="item">
+                                <div>
                                     <button
-                                        className="blue-btn center-btn fivepx-margin"
                                         type="submit"
                                         value="Update"
                                     >

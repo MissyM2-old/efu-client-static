@@ -1,23 +1,18 @@
 import React from 'react';
 
-import './css/suggestion.css';
-
-class Suggestion extends React.Component {
-    render() {
+ function Suggestion(props) {
         return (
             <ul className="skills-suggestion"> 
                     <li>
-                        <div>Study Skills</div> 
+                        <div>{props.category}</div> 
                     </li>
                     <li>
-                    <div>print things out</div>
-                    <div>~ anonymous</div>
+                    <div>{props.desc}</div>
+                    <div>~ {props.credit}</div>
 
                     </li>
             </ul> 
         );
-    }
-    
 }
 
 export default Suggestion;
